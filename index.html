@@ -4,24 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERIS SYSTEM BOOT</title>
+<title>🍭 ERIS-BOT MD // RANGO ADMIN</title>
+
+<!-- 🔥 PREVIEW -->
+<meta property="og:title" content="🍭 ERIS-BOT MD // RANGO ADMIN">
+<meta property="og:description" content="🌟 ᴘᴏᴡᴇʀᴇᴅ ʙʏ • I'm DuvalinBS">
+<meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
+<meta property="og:type" content="website">
 
 <style>
 body{
     margin:0;
-    height:100vh;
+    font-family:Arial,sans-serif;
+    background:#05070f;
+    color:#d1e8ff;
+}
+
+/* LOADER OVERLAY */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#05070f;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#05070f;
-    font-family:Arial,sans-serif;
-    color:#00f7ff;
+    flex-direction:column;
+    z-index:9999;
 }
 
-/* LOADER */
 .loader-box{
+    width:300px;
     text-align:center;
-    width:320px;
 }
 
 .bar{
@@ -37,7 +51,7 @@ body{
     height:100%;
     width:0%;
     background:#00f7ff;
-    animation:load 3s forwards;
+    animation:load 2.5s linear forwards;
 }
 
 @keyframes load{
@@ -45,53 +59,120 @@ body{
     100%{width:100%;}
 }
 
-.text{
-    font-size:13px;
-    opacity:0.8;
+/* PANEL */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    padding:20px;
 }
 
-/* OCULTO */
-#panel{
-    display:none;
+.module{
+    background:#0c1424;
+    border:1px solid rgba(0,255,255,0.15);
+    border-radius:10px;
+    padding:15px;
+}
+
+h3{
+    margin-top:0;
+    color:#00f7ff;
+    font-size:14px;
+}
+
+p{
+    font-size:13px;
+    opacity:0.85;
+}
+
+/* BUTTONS */
+.btn{
+    display:block;
+    margin-top:10px;
+    padding:10px;
     text-align:center;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.green{ background:#00f7ff; color:#000; }
+.blue{ background:#2d7dff; color:#fff; }
+.red{ background:#ff3b3b; color:#fff; }
+
+/* FIRMA */
+.signature{
+    text-align:center;
+    font-size:11px;
+    margin:15px;
+    color:#00f7ff;
+    text-shadow:0 0 10px #00f7ff;
+    animation:glow 2s infinite;
+}
+
+@keyframes glow{
+    0%{opacity:0.5;}
+    50%{opacity:1;}
+    100%{opacity:0.5;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- BOOT -->
-<div class="loader-box" id="loader">
-    <h3>ERIS SYSTEM BOOTING...</h3>
-    <div class="text">Inicializando módulos de seguridad</div>
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-box">
+        <h3>ERIS SYSTEM LOADING...</h3>
+        <p>Inicializando módulos...</p>
 
-    <div class="bar">
-        <div class="progress"></div>
+        <div class="bar">
+            <div class="progress"></div>
+        </div>
     </div>
 </div>
 
 <!-- PANEL REAL -->
-<div id="panel">
+<div class="container">
 
-    <h2>🍭 ERIS-BOT MD // RANGO ADMIN</h2>
+    <div class="module">
+        <h3>📡 SYSTEM STATUS</h3>
+        <p>🟢 ONLINE - STABLE CONNECTION</p>
+    </div>
 
-    <p>🌟 powered by • I'm DuvalinBS</p>
+    <div class="module">
+        <h3>🔐 NODE IDENTITY</h3>
+        <p>ID: ERIS-BOT MD</p>
+        <p>USER: ADMIN</p>
+        <p>OWNER: DuvalinBS</p>
+        <p>DEV: Neykoor</p>
+    </div>
 
-    <img src="https://files.catbox.moe/a9dq9c.jpg" width="200">
+    <div class="module">
+        <h3>📢 CANAL</h3>
+        <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O" target="_blank">OPEN</a>
+    </div>
 
-    <br><br>
+    <div class="module">
+        <h3>💬 GRUPO</h3>
+        <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im" target="_blank">JOIN</a>
+    </div>
 
-    <a href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">📢 CANAL</a><br>
-    <a href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">💬 GRUPO</a><br>
-    <a href="https://wa.me/5219616050619">📞 CONTACTO</a>
+    <div class="module">
+        <h3>📞 CONTACTO</h3>
+        <a class="btn red" href="https://wa.me/5219616050619" target="_blank">CHAT</a>
+    </div>
 
 </div>
 
+<div class="signature">
+    🌟 powered by • I'm DuvalinBS ✦
+</div>
+
 <script>
-setTimeout(()=>{
-    document.getElementById("loader").style.display="none";
-    document.getElementById("panel").style.display="block";
-}, 3000);
+setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+}, 2500);
 </script>
 
 </body>
