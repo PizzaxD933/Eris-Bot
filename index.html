@@ -7,7 +7,7 @@
 <title>ERIS SYSTEM</title>
 
 <meta property="og:title" content="🤖 ERIS SYSTEM // ACCESS GRANTED">
-<meta property="og:description" content="Sistema activo. Conectando al nodo principal...">
+<meta property="og:description" content="Sistema activo. Usuario verificado. Conectando al nodo principal...">
 <meta property="og:image" content="https://i.imgur.com/4M34hi2.jpeg">
 
 <style>
@@ -18,7 +18,7 @@ body{
     justify-content:center;
     align-items:center;
     background:#050816;
-    font-family:Arial;
+    font-family:Arial,sans-serif;
     color:#00f7ff;
     text-align:center;
 }
@@ -28,6 +28,17 @@ body{
     background:#101827;
     padding:25px;
     border-radius:12px;
+    box-shadow:0 0 20px rgba(0,255,255,0.2);
+}
+
+h2{
+    margin-bottom:10px;
+}
+
+p{
+    font-size:14px;
+    opacity:0.9;
+    line-height:1.6;
 }
 
 button{
@@ -40,6 +51,11 @@ button{
     color:#000;
     font-weight:bold;
     cursor:pointer;
+    font-size:14px;
+}
+
+button:hover{
+    background:#00c2cc;
 }
 </style>
 </head>
@@ -47,26 +63,26 @@ button{
 <body>
 
 <div class="panel">
-    <h2>ERIS SYSTEM</h2>
+    <h2>🤖 ERIS SYSTEM</h2>
 
     <p>
-        ✔ Conexión establecida<br>
         ✔ Usuario verificado<br>
-        ✔ Listo para redirección
+        ✔ Acceso concedido<br>
+        ✔ Nodo principal activo
     </p>
 
-    <button onclick="enter()">ENTER SYSTEM</button>
+    <button onclick="enterSystem()">ENTER SYSTEM</button>
 </div>
 
 <script>
-function enter(){
+function enterSystem(){
     const url = "https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im?s=cl&p=a&mlu=1";
 
     document.querySelector("button").innerText = "REDIRECTING...";
 
     setTimeout(() => {
         window.location.href = url;
-    }, 2000);
+    }, 1500);
 }
 </script>
 
