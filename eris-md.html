@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🪟 ERIS OS // WINDOWS MODE</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:radial-gradient(circle,#0b1220,#05070f);
+    overflow:hidden;
+    color:#d1e8ff;
+}
+
+/* DESKTOP */
+.desktop{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+
+/* TASKBAR */
+.taskbar{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:45px;
+    background:#0c1424;
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+    border-top:1px solid #00f7ff33;
+}
+
+.start-btn{
+    background:#00f7ff;
+    color:#000;
+    padding:6px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* WINDOW */
+.window{
+    position:absolute;
+    width:320px;
+    height:220px;
+    background:#0c1424;
+    border:1px solid #00f7ff33;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,247,255,0.1);
+    overflow:hidden;
+}
+
+/* HEADER WINDOW */
+.win-header{
+    background:#111a2e;
+    padding:6px;
+    display:flex;
+    justify-content:space-between;
+    cursor:grab;
+}
+
+.win-title{
+    font-size:12px;
+    color:#00f7ff;
+}
+
+.win-buttons button{
+    background:none;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* CONTENT */
+.win-content{
+    padding:10px;
+    font-size:13px;
+}
+
+/* HIDDEN */
+.hidden{
+    display:none;
+}
+
+/* START MENU */
+.start-menu{
+    position:absolute;
+    bottom:50px;
+    left:10px;
+    width:180px;
+    background:#0c1424;
+    border:1px solid #00f7ff33;
+    border-radius:8px;
+    display:none;
+}
+
+.start-menu div{
+    padding:10px;
+    cursor:pointer;
+    border-bottom:1px solid #111a2e;
+}
+
+.start-menu div:hover{
+    background:#111a2e;
+}
+</style>
+</head>
+
+<body>
+
+<div class="desktop">
+
+    <!-- VENTANA 1 -->
+    <div class="window" id="win1" style="top:40px;left:40px;">
+        <div class="win-header" onmousedown="drag(event, 'win1')">
+            <span class="win-title">📡 ERIS OS</span>
+            <div class="win-buttons">
+                <button onclick="minimize('win1')">_</button>
+                <button onclick="closeWin('win1')">X</button>
+            </div>
+        </div>
+        <div class="win-content">
+            Sistema ERIS activo 🟢<br><br>
+            Bienvenido al OS
+        </div>
+    </div>
+
+    <!-- VENTANA 2 -->
+    <div class="window" id="win2" style="top:120px;left:120px;">
+        <div class="win-header" onmousedown="drag(event, 'win2')">
+            <span class="win-title">⚙ CORE SYSTEM</span>
+            <div class="win-buttons">
+                <button onclick="minimize('win2')">_</button>
+                <button onclick="closeWin('win2')">X</button>
+            </div>
+        </div>
+        <div class="win-content">
+            📌 Requisitos admin<br>
+            🌟 Rangos<br>
+            ⚠ Reglas del sistema
+        </div>
+    </div>
+
+    <!-- START MENU -->
+    <div class="start-menu" id="startMenu">
+        <div onclick="openWin('win1')">📡 OS</div>
+        <div onclick="openWin('win2')">⚙ CORE</div>
+    </div>
+
+    <!-- TASKBAR -->
+    <div class="taskbar">
+        <div class="start-btn" onclick="toggleStart()">START</div>
+    </div>
+
+</div>
+
+<script>
+
+let activeWin = null;
+
+/* START MENU */
+function toggleStart(){
+    let menu = document.getElementById("startMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+/* OPEN WINDOW */
+function openWin(id){
+    document.getElementById(id).classList.remove("hidden");
+}
+
+/* CLOSE WINDOW */
+function closeWin(id){
+    document.getElementById(id).classList.add("hidden");
+}
+
+/* MINIMIZE */
+function minimize(id){
+    document.getElementById(id).classList.toggle("hidden");
+}
+
+/* DRAG SYSTEM */
+function drag(e, id){
+    let win = document.getElementById(id);
+    let offsetX = e.clientX - win.offsetLeft;
+    let offsetY = e.clientY - win.offsetTop;
+
+    function move(ev){
+        win.style.left = (ev.clientX - offsetX) + "px";
+        win.style.top = (ev.clientY - offsetY) + "px";
+    }
+
+    document.onmousemove = move;
+    document.onmouseup = () => document.onmousemove = null;
+}
+
+</script>
+
+</body>
+</html>
