@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍭 ERIS-BOT MD // MODO ADMIN</title>
+<title>🍭 ERIS-BOT MD // SYSTEM ADMIN</title>
 
-<meta property="og:title" content="🍭 ERIS-BOT MD // MODO ADMIN">
-<meta property="og:description" content="🌟 ᴘᴏᴡᴇʀᴇᴅ ʙʏ • I'm DuvalinBS">
+<meta property="og:title" content="🍭 ERIS-BOT MD // SYSTEM ADMIN">
+<meta property="og:description" content="🌟 powered by I'm DuvalinBS">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
 <meta property="og:type" content="website">
 
@@ -20,60 +20,12 @@ body{
     padding-top:10px;
 }
 
-/* POWER BUTTON */
-#powerBtn{
-    position:fixed;
-    top:10px;
-    right:10px;
-    z-index:99999;
-    padding:10px 14px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-    background:#ff3b3b;
-    color:white;
-}
-
-/* LOADER */
-#loader{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:#05070f;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-.bar{
-    width:280px;
-    height:8px;
-    background:#111a2e;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.progress{
-    width:0%;
-    height:100%;
-    background:#00f7ff;
-    animation:load 2.5s linear forwards;
-}
-
-@keyframes load{
-    to{width:100%;}
-}
-
 /* NAV */
 nav{
     display:flex;
     justify-content:center;
     gap:10px;
     padding:10px;
-    margin-top:60px;
     background:#0c1424;
     border-bottom:1px solid #00f7ff33;
 }
@@ -92,10 +44,7 @@ nav button{
     display:none;
     padding:20px;
 }
-
-.active{
-    display:block;
-}
+.active{display:block;}
 
 /* GRID */
 .container{
@@ -111,7 +60,7 @@ nav button{
     padding:15px;
 }
 
-/* BUTTONS */
+/* BOTONES */
 .btn{
     display:block;
     margin-top:10px;
@@ -127,7 +76,7 @@ nav button{
 .red{background:#ff3b3b;color:#fff;}
 .youtube{background:#ff2e2e;color:#fff;}
 
-/* CHAT WHATSAPP STYLE */
+/* CHAT */
 .chatbox{
     display:flex;
     flex-direction:column;
@@ -139,12 +88,6 @@ nav button{
     max-width:320px;
     padding:10px;
     border-radius:12px;
-    font-size:13px;
-    line-height:1.4;
-}
-
-.msg.bot{
-    align-self:flex-start;
     background:#0c1424;
     border:1px solid #00f7ff33;
 }
@@ -152,65 +95,58 @@ nav button{
 .msg.me{
     align-self:flex-end;
     background:#1a2a44;
-    color:#fff;
 }
 
-.forward-tag{
-    font-size:10px;
-    color:#00f7ff;
-    opacity:0.7;
-    margin-bottom:4px;
+/* STATUS */
+#status{
+    font-weight:bold;
 }
 
-/* LOGS */
-.logbox{
+/* ADMIN PANEL */
+#adminPanel{
+    display:none;
+    position:fixed;
+    bottom:10px;
+    left:10px;
     background:#0c1424;
-    padding:15px;
-    border-radius:10px;
     border:1px solid #00f7ff33;
-    font-size:13px;
+    padding:10px;
+    border-radius:10px;
+    width:220px;
 }
 
-/* FIRMA */
-.signature{
-    text-align:center;
-    font-size:11px;
-    margin:15px;
-    color:#00f7ff;
+#adminPanel button{
+    margin-top:5px;
+    width:100%;
+    padding:8px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
 }
+
 </style>
 </head>
 
 <body>
 
-<button id="powerBtn" onclick="togglePower()">⏻ ENCENDIDO</button>
-
-<div id="loader">
-    <h3>SISTEMA ERIS INICIANDO...</h3>
-    <div class="bar"><div class="progress"></div></div>
-</div>
-
 <nav>
     <button onclick="show('home')">INICIO</button>
     <button onclick="show('panel')">PANEL</button>
-    <button onclick="show('logs')">REGISTROS</button>
+    <button onclick="show('chat')">CHAT</button>
 </nav>
 
 <!-- HOME -->
 <div id="home" class="section active">
-    <h2>📡 SISTEMA EN LÍNEA</h2>
+
+    <h2>📡 ERIS SYSTEM ONLINE</h2>
+
+    <p id="status">🟢 ONLINE</p>
 
     <div class="container">
 
         <div class="module">
-            <h3>ESTADO</h3>
-            <p id="status">🟢 EN LÍNEA</p>
-        </div>
-
-        <div class="module">
-            <h3>IDENTIDAD</h3>
-            <p>ERIS-BOT MD</p>
-            <p>MODO ADMIN</p>
+            <h3>SISTEMA</h3>
+            <p>ERIS-BOT MD ACTIVE</p>
         </div>
 
         <div class="module">
@@ -220,40 +156,21 @@ nav button{
 
     </div>
 
-    <!-- 💬 CHAT STYLE -->
-    <div class="chatbox">
+    <div class="chatbox" id="chatBox">
 
-        <div class="msg bot" data-forward="true">
-            ERIS BOT<br>
-            📢 Bienvenido al sistema ERIS
-        </div>
+        <div class="msg">ERIS BOT<br>Bienvenido al sistema</div>
 
-        <div class="msg bot">
-            ERIS BOT<br>
-            ⚙ Sistema estable en línea
-        </div>
+        <div class="msg">ERIS BOT<br>Sistema estable</div>
 
-        <div class="msg bot" data-forward="true">
-            ERIS BOT<br>
-            🔗 Canal oficial:<br>
-            https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O
-        </div>
-
-        <div class="msg me">
-            Usuario<br>
-            hola
-        </div>
-
-        <div class="msg bot" data-forward="true">
-            ERIS BOT<br>
-            👋 Hola, sistema activo
-        </div>
+        <div class="msg me">Usuario<br>hola</div>
 
     </div>
+
 </div>
 
 <!-- PANEL -->
 <div id="panel" class="section">
+
     <h2>⚙ PANEL DE CONTROL</h2>
 
     <div class="container">
@@ -274,57 +191,83 @@ nav button{
         </div>
 
     </div>
+
 </div>
 
-<!-- LOGS -->
-<div id="logs" class="section">
-    <h2>📜 REGISTROS</h2>
+<!-- CHAT -->
+<div id="chat" class="section">
+    <h2>💬 CHAT VIEW</h2>
 
-    <div class="logbox">
-        > Sistema iniciado<br>
-        > ERIS ONLINE<br>
-        > Usuario ADMIN<br>
+    <div class="chatbox">
+        <div class="msg">ERIS BOT<br>Modo chat activo</div>
+        <div class="msg me">Usuario<br>test</div>
     </div>
+
 </div>
 
-<div class="signature">
-    🌟 powered by • I'm DuvalinBS ✦
+<!-- ADMIN PANEL -->
+<div id="adminPanel">
+
+    <button onclick="toggleSystem()" style="background:#00f7ff;color:#000;">ON/OFF SISTEMA</button>
+    <button onclick="editMessage()" style="background:#2d7dff;color:#fff;">EDITAR MENSAJE</button>
+    <button onclick="clearChat()" style="background:#ff3b3b;color:#fff;">LIMPIAR CHAT</button>
+
 </div>
 
 <script>
-let power = true;
 
-setTimeout(()=>{
-    document.getElementById("loader").style.display="none";
-},2500);
+let systemOn = true;
 
+/* TOKEN ADMIN */
+const TOKEN = "ERIS-ADMIN-2026";
+
+/* LOGIN */
+window.onload = () => {
+    let input = prompt("🔐 TOKEN ADMIN:");
+
+    if(input === TOKEN){
+        document.getElementById("adminPanel").style.display="block";
+        alert("ACCESO ADMIN CONCEDIDO");
+    }else{
+        alert("MODO USUARIO ACTIVO");
+    }
+};
+
+/* NAV */
 function show(id){
-    if(!power) return alert("🔴 SISTEMA APAGADO");
+    if(!systemOn) return alert("Sistema apagado");
+
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
 
-function togglePower(){
-    power = !power;
+/* ON/OFF */
+function toggleSystem(){
+    systemOn = !systemOn;
 
-    if(power){
-        document.body.style.filter="none";
-        document.getElementById("status").innerText="🟢 EN LÍNEA";
-    }else{
-        document.body.style.filter="brightness(0.2)";
-        document.getElementById("status").innerText="🔴 APAGADO";
+    document.getElementById("status").innerText =
+    systemOn ? "🟢 ONLINE" : "🔴 OFFLINE";
+
+    document.body.style.filter =
+    systemOn ? "none" : "brightness(0.3)";
+}
+
+/* EDITAR MENSAJE */
+function editMessage(){
+    let text = prompt("Nuevo mensaje:");
+
+    if(text){
+        document.querySelectorAll(".msg")[0].innerHTML =
+        "ERIS BOT<br>" + text;
     }
 }
 
-/* 🔥 AUTO REENVIADO */
-document.querySelectorAll(".msg").forEach(msg=>{
-    if(msg.dataset.forward === "true"){
-        const tag=document.createElement("div");
-        tag.className="forward-tag";
-        tag.innerText="↪ Reenviado";
-        msg.prepend(tag);
-    }
-});
+/* LIMPIAR CHAT */
+function clearChat(){
+    document.getElementById("chatBox").innerHTML =
+    "<div class='msg'>ERIS BOT<br>Chat reiniciado</div>";
+}
+
 </script>
 
 </body>
