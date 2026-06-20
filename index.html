@@ -4,122 +4,183 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍭 ERIS-BOT MD // RANGO: ADMIN</title>
+<title>ERIS SECURITY SYSTEM // DASHBOARD</title>
 
-<!-- 🔥 PREVIEW WHATSAPP / DISCORD -->
-<meta property="og:title" content="🍭 ERIS-BOT MD // RANGO: ADMIN">
-<meta property="og:description" content="🌟 ᴘᴏᴡᴇʀᴇᴅ ʙʏ • I'm DuvalinBS">
-<meta property="og:type" content="website">
+<meta property="og:title" content="ERIS SECURITY SYSTEM // ACTIVE NODE">
+<meta property="og:description" content="Cybersecurity dashboard interface | Access controlled system">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
+<meta property="og:type" content="website">
 
 <style>
 body{
     margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: radial-gradient(circle at top, #050816, #000);
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
+    background:#05070f;
+    color:#d1e8ff;
+}
+
+/* HEADER */
+.header{
+    padding:20px;
+    text-align:center;
+    background:linear-gradient(90deg,#0b1220,#0a1a2f);
+    border-bottom:1px solid rgba(0,255,255,0.2);
+}
+
+.header h1{
+    margin:0;
+    font-size:18px;
+    letter-spacing:2px;
     color:#00f7ff;
 }
 
-.card{
-    width:380px;
-    background:#101827;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 0 25px rgba(0,255,255,0.2);
-    text-align:center;
+.header p{
+    font-size:12px;
+    opacity:0.7;
 }
 
-h2{
-    margin-bottom:10px;
+/* GRID DASHBOARD */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    padding:20px;
 }
 
-p{
+/* MODULES */
+.module{
+    background:#0c1424;
+    border:1px solid rgba(0,255,255,0.15);
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 0 15px rgba(0,255,255,0.05);
+}
+
+.module h3{
+    margin-top:0;
+    font-size:14px;
+    color:#00f7ff;
+    letter-spacing:1px;
+}
+
+.module p{
     font-size:13px;
-    opacity:0.9;
+    opacity:0.85;
 }
 
-/* BOTONES */
+/* STATUS */
+.status-online{
+    color:#00ff9d;
+    font-weight:bold;
+}
+
+.status-warning{
+    color:#ffcc00;
+    font-weight:bold;
+}
+
+/* BUTTONS */
 .btn{
     display:block;
-    margin-top:12px;
-    padding:12px;
-    border-radius:8px;
-    font-weight:bold;
+    margin-top:10px;
+    padding:10px;
+    text-align:center;
+    border-radius:6px;
     text-decoration:none;
-    color:#000;
+    font-weight:bold;
+    font-size:13px;
     transition:0.2s;
 }
 
-.github{ background:#00f7ff; }
-.github:hover{ background:#00c2cc; }
+.green{ background:#00f7ff; color:#000; }
+.green:hover{ background:#00c2cc; }
 
-.whatsapp{ background:#25d366; }
-.whatsapp:hover{ background:#1fa852; }
+.red{ background:#ff3b3b; color:#fff; }
+.red:hover{ background:#c92c2c; }
 
-.youtube{ background:#ff2e2e; color:#fff; }
-.youtube:hover{ background:#cc2424; }
+.blue{ background:#2d7dff; color:#fff; }
+.blue:hover{ background:#1f5fcc; }
 
-/* FIRMA GLOW */
-.tag{
-    margin-top:18px;
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:15px;
     font-size:11px;
-    opacity:0.8;
-    animation: glowAnim 2s infinite ease-in-out;
-    text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+    opacity:0.6;
 }
 
-@keyframes glowAnim{
-    0%{
-        text-shadow: 0 0 3px #00f7ff, 0 0 8px #00f7ff;
-        opacity:0.6;
-    }
-    50%{
-        text-shadow: 0 0 10px #00f7ff, 0 0 25px #00f7ff, 0 0 40px #00f7ff;
-        opacity:1;
-    }
-    100%{
-        text-shadow: 0 0 3px #00f7ff, 0 0 8px #00f7ff;
-        opacity:0.6;
-    }
+/* GLOW SIGNATURE */
+.signature{
+    margin-top:10px;
+    font-size:11px;
+    color:#00f7ff;
+    text-shadow:0 0 8px #00f7ff;
+    animation:glow 2s infinite ease-in-out;
+}
+
+@keyframes glow{
+    0%{opacity:0.5; text-shadow:0 0 5px #00f7ff;}
+    50%{opacity:1; text-shadow:0 0 20px #00f7ff;}
+    100%{opacity:0.5; text-shadow:0 0 5px #00f7ff;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="header">
+    <h1>ERIS SECURITY SYSTEM</h1>
+    <p>Cyber Interface Dashboard • Access Level: ADMIN</p>
+</div>
 
-    <h2>🍭 ERIS-BOT MD</h2>
+<div class="container">
 
-    <p>
-        ✔ RANGO: ADMIN<br>
-        ✔ SISTEMA ACTIVO<br>
-        ✔ ACCESOS DISPONIBLES
-    </p>
-
-    <!-- GITHUB -->
-    <a class="btn github" href="https://pizzaxd933.github.io/Eris-Bot/" target="_blank">
-        🌐 GITHUB SYSTEM
-    </a>
-
-    <!-- WHATSAPP -->
-    <a class="btn whatsapp" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im" target="_blank">
-        📢 GRUPO
-    </a>
-
-    <!-- YOUTUBE -->
-    <a class="btn youtube" href="https://youtube.com/@theduvalinbs?si=xIsq7g-qZdUsboAQ" target="_blank">
-        ▶ CANAL YOUTUBE
-    </a>
-
-    <div class="tag">
-        🌟 powered by • I'm DuvalinBS ✦
+    <!-- STATUS -->
+    <div class="module">
+        <h3>📡 SYSTEM STATUS</h3>
+        <p class="status-online">🟢 ONLINE - ALL SYSTEMS OPERATIONAL</p>
+        <p>Uptime stable. No threats detected.</p>
     </div>
 
+    <!-- IDENTIDAD -->
+    <div class="module">
+        <h3>🔐 NODE IDENTITY</h3>
+        <p>ID: ERIS-BOT MD</p>
+        <p>USER: ADMIN (DUVALINBS)</p>
+        <p>SECURITY: LEVEL 3 ACCESS</p>
+    </div>
+
+    <!-- CANAL -->
+    <div class="module">
+        <h3>📢 OFFICIAL CHANNEL</h3>
+        <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O" target="_blank">
+            OPEN CHANNEL
+        </a>
+    </div>
+
+    <!-- GRUPO -->
+    <div class="module">
+        <h3>💬 COMMUNITY GROUP</h3>
+        <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im" target="_blank">
+            JOIN GROUP
+        </a>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="module">
+        <h3>📞 DIRECT CONTACT</h3>
+        <a class="btn red" href="https://wa.me/5219616050619" target="_blank">
+            OPEN CHAT
+        </a>
+    </div>
+
+</div>
+
+<div class="footer">
+    SYSTEM INTERFACE v2.0
+    <div class="signature">
+        🌟 powered by • I'm DuvalinBS ✦
+    </div>
 </div>
 
 </body>
