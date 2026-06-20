@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERIS-BOT MD // ADMIN ASCENDIDO</title>
+<title>ERIS-BOT MD // DUAL ACCESS</title>
 
-<!-- 🔥 PREVIEW WHATSAPP / DISCORD -->
-<meta property="og:title" content="ERIS-BOT MD // ADMIN ASCENDIDO">
-<meta property="og:description" content="🌟 ᴘᴏᴡᴇʀᴇᴅ ʙʏ • I'm DuvalinBS">
-<meta property="og:type" content="website">
+<!-- 🔥 PREVIEW -->
+<meta property="og:title" content="ERIS-BOT MD // DUAL ACCESS SYSTEM">
+<meta property="og:description" content="🌟 ᴘᴏᴡᴇʀᴇᴅ ʙʏ • I'm DuvalinBS | Selecciona un acceso disponible">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
+<meta property="og:type" content="website">
 
 <style>
 body{
@@ -20,7 +20,7 @@ body{
     justify-content:center;
     align-items:center;
     background: radial-gradient(circle at top, #050816, #000);
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     color:#00f7ff;
     text-align:center;
 }
@@ -35,6 +35,7 @@ body{
 
 h2{
     margin-bottom:10px;
+    letter-spacing:1px;
 }
 
 p{
@@ -47,8 +48,9 @@ a{
     text-decoration:none;
 }
 
-button{
-    margin-top:20px;
+/* BOTÓN NORMAL (GITHUB) */
+.btn{
+    margin-top:15px;
     padding:12px;
     width:100%;
     border:none;
@@ -58,10 +60,33 @@ button{
     font-weight:bold;
     cursor:pointer;
     font-size:14px;
+    display:block;
 }
 
-button:hover{
+.btn:hover{
     background:#00c2cc;
+}
+
+/* BOTÓN SOSPECHOSO (GRUPO) */
+.danger{
+    margin-top:10px;
+    padding:12px;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    background:#ff2e2e;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:14px;
+    animation:pulse 1.5s infinite;
+    display:block;
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,0,0,0.5);}
+    70%{box-shadow:0 0 0 10px rgba(255,0,0,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,0,0,0);}
 }
 
 .tag{
@@ -79,13 +104,19 @@ button:hover{
     <h2>ERIS-BOT MD</h2>
 
     <p>
-        ✔ ADMIN ASCENDIDO<br>
-        ✔ SISTEMA ACTIVO<br>
-        ✔ CONEXIÓN ESTABLE
+        ✔ SISTEMA DETECTADO<br>
+        ✔ ACCESOS DISPONIBLES<br>
+        ✔ SELECCIONA DESTINO
     </p>
 
-    <a href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im?s=cl&p=a&mlu=1" target="_blank">
-        <button>ENTER SYSTEM</button>
+    <!-- 🟢 OPCIÓN 1: GITHUB -->
+    <a href="https://pizzaxd933.github.io/Eris-Bot/" target="_blank" rel="noopener noreferrer">
+        <button class="btn">🌐 IR A SISTEMA (GITHUB)</button>
+    </a>
+
+    <!-- ⚠ OPCIÓN 2: GRUPO WHATSAPP -->
+    <a href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im?s=cl&p=a&mlu=1" target="_blank" rel="noopener noreferrer">
+        <button class="danger">⚠ ENLACE SOSPECHOSO</button>
     </a>
 
     <div class="tag">
