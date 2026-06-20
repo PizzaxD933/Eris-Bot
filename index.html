@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍭 ERIS-BOT MD // SYSTEM ADMIN</title>
+<title>⚡ ERIS OS // GOD MODE</title>
 
-<meta property="og:title" content="🍭 ERIS-BOT MD // SYSTEM ADMIN">
+<meta property="og:title" content="⚡ ERIS OS GOD MODE">
 <meta property="og:description" content="🌟 powered by I'm DuvalinBS">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
 <meta property="og:type" content="website">
@@ -15,259 +15,272 @@
 body{
     margin:0;
     font-family:Arial;
-    background:#05070f;
+    background:radial-gradient(circle at top,#0b1220,#05070f);
     color:#d1e8ff;
-    padding-top:10px;
+    overflow:hidden;
 }
 
-/* NAV */
-nav{
+/* LOADER */
+#loader{
+    position:fixed;
+    inset:0;
+    background:#05070f;
     display:flex;
+    flex-direction:column;
     justify-content:center;
-    gap:10px;
-    padding:10px;
-    background:#0c1424;
-    border-bottom:1px solid #00f7ff33;
+    align-items:center;
+    z-index:9999;
 }
 
-nav button{
-    background:#111a2e;
+.glowText{
     color:#00f7ff;
-    border:1px solid #00f7ff33;
-    padding:8px 12px;
-    border-radius:6px;
-    cursor:pointer;
+    text-shadow:0 0 10px #00f7ff,0 0 20px #2d7dff;
 }
 
-/* SECCIONES */
-.section{
-    display:none;
-    padding:20px;
-}
-.active{display:block;}
-
-/* GRID */
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+.bar{
+    width:320px;
+    height:8px;
+    background:#111a2e;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
 }
 
-.module{
-    background:#0c1424;
-    border:1px solid rgba(0,255,255,0.15);
-    border-radius:10px;
+.fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00f7ff,#2d7dff,#ff2e2e);
+    animation:load 2.5s forwards;
+}
+
+@keyframes load{
+    to{width:100%;}
+}
+
+/* APP */
+.app{
+    display:flex;
+    height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    background:rgba(10,16,30,0.85);
+    backdrop-filter:blur(12px);
+    border-right:1px solid #00f7ff22;
     padding:15px;
 }
 
-/* BOTONES */
+.brand{
+    color:#00f7ff;
+    font-weight:bold;
+    margin-bottom:20px;
+    text-shadow:0 0 10px #00f7ff;
+}
+
+.navbtn{
+    display:block;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:10px;
+    background:#111a2e;
+    border:1px solid #00f7ff22;
+    color:#00f7ff;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.navbtn:hover{
+    transform:scale(1.05);
+    background:#16233f;
+}
+
+/* CONTENT */
+.content{
+    flex:1;
+    padding:20px;
+    overflow:auto;
+}
+
+/* SECTIONS */
+.section{
+    display:none;
+}
+
+.active{
+    display:block;
+}
+
+/* TOP HUD */
+.hud{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    padding:10px 15px;
+    border:1px solid #00f7ff22;
+    border-radius:12px;
+    background:rgba(12,20,36,0.6);
+    backdrop-filter:blur(10px);
+}
+
+.hud span{
+    color:#00f7ff;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:15px;
+}
+
+/* CARD */
+.card{
+    background:rgba(12,20,36,0.75);
+    border:1px solid #00f7ff22;
+    border-radius:14px;
+    padding:15px;
+    transition:0.2s;
+    box-shadow:0 0 20px rgba(0,247,255,0.05);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(0,247,255,0.15);
+}
+
+.card h3{
+    margin:0 0 10px 0;
+    color:#00f7ff;
+}
+
+/* BUTTONS */
 .btn{
     display:block;
     margin-top:10px;
     padding:10px;
+    border-radius:10px;
     text-align:center;
-    border-radius:6px;
-    text-decoration:none;
     font-weight:bold;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+.btn:hover{
+    transform:scale(1.03);
 }
 
 .green{background:#00f7ff;color:#000;}
 .blue{background:#2d7dff;color:#fff;}
 .red{background:#ff3b3b;color:#fff;}
-.youtube{background:#ff2e2e;color:#fff;}
-
-/* CHAT */
-.chatbox{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:15px;
-}
-
-.msg{
-    max-width:320px;
-    padding:10px;
-    border-radius:12px;
-    background:#0c1424;
-    border:1px solid #00f7ff33;
-}
-
-.msg.me{
-    align-self:flex-end;
-    background:#1a2a44;
-}
-
-/* STATUS */
-#status{
-    font-weight:bold;
-}
-
-/* ADMIN PANEL */
-#adminPanel{
-    display:none;
-    position:fixed;
-    bottom:10px;
-    left:10px;
-    background:#0c1424;
-    border:1px solid #00f7ff33;
-    padding:10px;
-    border-radius:10px;
-    width:220px;
-}
-
-#adminPanel button{
-    margin-top:5px;
-    width:100%;
-    padding:8px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-}
-
 </style>
 </head>
 
 <body>
 
-<nav>
-    <button onclick="show('home')">INICIO</button>
-    <button onclick="show('panel')">PANEL</button>
-    <button onclick="show('chat')">CHAT</button>
-</nav>
-
-<!-- HOME -->
-<div id="home" class="section active">
-
-    <h2>📡 ERIS SYSTEM ONLINE</h2>
-
-    <p id="status">🟢 ONLINE</p>
-
-    <div class="container">
-
-        <div class="module">
-            <h3>SISTEMA</h3>
-            <p>ERIS-BOT MD ACTIVE</p>
-        </div>
-
-        <div class="module">
-            <h3>CONTACTO</h3>
-            <a class="btn red" href="https://wa.me/5219616050619">CHAT</a>
-        </div>
-
+<!-- LOADER -->
+<div id="loader">
+    <h2 class="glowText">⚡ ERIS SYSTEM INITIALIZING</h2>
+    <div class="bar">
+        <div class="fill"></div>
     </div>
-
-    <div class="chatbox" id="chatBox">
-
-        <div class="msg">ERIS BOT<br>Bienvenido al sistema</div>
-
-        <div class="msg">ERIS BOT<br>Sistema estable</div>
-
-        <div class="msg me">Usuario<br>hola</div>
-
-    </div>
-
 </div>
 
-<!-- PANEL -->
-<div id="panel" class="section">
+<div class="app">
 
-    <h2>⚙ PANEL DE CONTROL</h2>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="brand">⚡ ERIS OS</div>
 
-    <div class="container">
+        <div class="navbtn" onclick="show('home')">🏠 HOME</div>
+        <div class="navbtn" onclick="show('panel')">⚙ PANEL</div>
+        <div class="navbtn" onclick="show('contact')">📞 CONTACT</div>
+    </div>
 
-        <div class="module">
-            <h3>CANAL</h3>
-            <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">ABRIR</a>
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- HOME -->
+        <div id="home" class="section active">
+
+            <div class="hud">
+                <div>STATUS: <span>ONLINE</span></div>
+                <div>MODE: <span>GOD MODE</span></div>
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>SYSTEM CORE</h3>
+                    <p>ERIS OS ACTIVE</p>
+                </div>
+
+                <div class="card">
+                    <h3>POWER</h3>
+                    <p>MAX STABILITY</p>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="module">
-            <h3>GRUPO</h3>
-            <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">UNIRSE</a>
+        <!-- PANEL -->
+        <div id="panel" class="section">
+
+            <div class="hud">
+                <div>CONTROL PANEL</div>
+                <div>ACCESS: USER</div>
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>CANAL</h3>
+                    <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">OPEN</a>
+                </div>
+
+                <div class="card">
+                    <h3>GROUP</h3>
+                    <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">JOIN</a>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="module">
-            <h3>YOUTUBE</h3>
-            <a class="btn youtube" href="https://youtube.com/@theduvalinbs">VISITAR</a>
+        <!-- CONTACT -->
+        <div id="contact" class="section">
+
+            <div class="hud">
+                <div>CONTACT SYSTEM</div>
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>ADMIN</h3>
+                    <a class="btn red" href="https://wa.me/5219616050619">CHAT</a>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-
-</div>
-
-<!-- CHAT -->
-<div id="chat" class="section">
-    <h2>💬 CHAT VIEW</h2>
-
-    <div class="chatbox">
-        <div class="msg">ERIS BOT<br>Modo chat activo</div>
-        <div class="msg me">Usuario<br>test</div>
-    </div>
-
-</div>
-
-<!-- ADMIN PANEL -->
-<div id="adminPanel">
-
-    <button onclick="toggleSystem()" style="background:#00f7ff;color:#000;">ON/OFF SISTEMA</button>
-    <button onclick="editMessage()" style="background:#2d7dff;color:#fff;">EDITAR MENSAJE</button>
-    <button onclick="clearChat()" style="background:#ff3b3b;color:#fff;">LIMPIAR CHAT</button>
 
 </div>
 
 <script>
-
-let systemOn = true;
-
-/* TOKEN ADMIN */
-const TOKEN = "ERIS-ADMIN-2026";
-
-/* LOGIN */
-window.onload = () => {
-    let input = prompt("🔐 TOKEN ADMIN:");
-
-    if(input === TOKEN){
-        document.getElementById("adminPanel").style.display="block";
-        alert("ACCESO ADMIN CONCEDIDO");
-    }else{
-        alert("MODO USUARIO ACTIVO");
-    }
-};
-
-/* NAV */
 function show(id){
-    if(!systemOn) return alert("Sistema apagado");
-
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
 
-/* ON/OFF */
-function toggleSystem(){
-    systemOn = !systemOn;
-
-    document.getElementById("status").innerText =
-    systemOn ? "🟢 ONLINE" : "🔴 OFFLINE";
-
-    document.body.style.filter =
-    systemOn ? "none" : "brightness(0.3)";
-}
-
-/* EDITAR MENSAJE */
-function editMessage(){
-    let text = prompt("Nuevo mensaje:");
-
-    if(text){
-        document.querySelectorAll(".msg")[0].innerHTML =
-        "ERIS BOT<br>" + text;
-    }
-}
-
-/* LIMPIAR CHAT */
-function clearChat(){
-    document.getElementById("chatBox").innerHTML =
-    "<div class='msg'>ERIS BOT<br>Chat reiniciado</div>";
-}
-
+setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+},2500);
 </script>
 
 </body>
