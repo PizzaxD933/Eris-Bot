@@ -14,7 +14,6 @@ body{
     color:#d1e8ff;
 }
 
-/* HEADER */
 header{
     padding:15px;
     background:#0c1424;
@@ -27,7 +26,6 @@ header h1{
     color:#00f7ff;
 }
 
-/* BACK BUTTON */
 .back{
     display:inline-block;
     margin-top:10px;
@@ -39,7 +37,6 @@ header h1{
     font-weight:bold;
 }
 
-/* GRID */
 .container{
     padding:20px;
     display:grid;
@@ -47,18 +44,12 @@ header h1{
     gap:15px;
 }
 
-/* CARD */
 .card{
     background:#0c1424;
     padding:15px;
     border-radius:10px;
     border:1px solid #00f7ff22;
     white-space:pre-wrap;
-}
-
-.card h3{
-    color:#00f7ff;
-    margin-top:0;
 }
 </style>
 </head>
@@ -68,89 +59,56 @@ header h1{
 <header>
     <h1> ERIS CORE SYSTEM</h1>
 
-    <!-- REGRESO -->
-    <a class="back" href="index.html"> VOLVER AL OS</a>
+    <!--  FIX 404 -->
+    <a class="back" href="./index.html"> VOLVER AL OS</a>
 </header>
 
 <div class="container">
 
     <div class="card">
-<h3>
- `REQUISITO OBLIGATORIO`
-</h3>
-
- ADMIN :: I’m DuvalinBS  
- AGE MAX :: 15-20  
- ADMIN GROUP :: 5-10  
- TIME ACTIVE :: 5-10h (day)  
- USERS :: 8 admins/users  
- URL :: <profile url admin>  
-
-   
+
+ REQUISITO OBLIGATORIO
+
+ ADMIN: I’m DuvalinBS
+ AGE MAX: 15-20
+ ACTIVE: 5-10h
+ USERS: 8
+
     </div>
 
     <div class="card">
-<h3> › ¡ REQUISITOS PARA SER ADMIN!</h3>
-
-›  Saber los comandos y funciones del bot.  
-No te pedimos programar o algo así, con saberte los comandos principales del bot es suficiente.
-
-›  Tener conocimiento de administración.  
-Debes ser formal y responder dudas de los usuarios.
-
-›  Agregar como máximo 5-7 personas cada semana.  
-Tendrás 2-3 días de oportunidad. Si no cumples serás expulsado de administración (no del grupo).
+ REQUISITOS:
+• Saber comandos  
+• Ser activo  
+• Ser formal  
+• Responder usuarios  
     </div>
 
     <div class="card">
-<h3> RANGOS / SUELDO DE ADMINS</h3>
-
-Esto te ayudará a obtener recompensas, confianza u oportunidades extras.
-
-
-
+ RANGOS:
 • Novato  
 • Bueno   
 • Elite   
 
 const userData = {
-  rango: "Sin rangos actualmente",
-  update: "20/6/2026",
-  time: "48 horas"
+  rango:"Sin rangos",
+  update:"20/6/2026",
+  time:"48h"
 }
-
-const mensaje = `
-<${userData.rango}>: update ${userData.update}
-<Time> ${userData.time}
-`
     </div>
 
     <div class="card">
-<h3> DESVENTAJAS DE TENER RANGO</h3>
-
-Al llegar a BUENO () aumentan tus estadísticas:
-
-• Agregar 12 personas en lugar de 5-7  
-• Tendrás 3-4 días en lugar de 2-3  
-• Recompensa ¥1000000 si cumples tu rol  
-
-  const texto = "Al llegar a BUENO ()..."  
+ DESVENTAJAS:
+• +12 usuarios  
+• Menos tiempo  
+• Recompensa si cumples  
     </div>
 
     <div class="card">
-<h3> PREGUNTAS FRECUENTES</h3>
-
-#rw › #c  
- Personaje auto reclamado  
-
-#rob <user>  
- No existe robo de dinero  
-
-#depositar  
- No existe banco  
-
-#menu  
- Sistema activo con #setprimary
+ FAQ:
+#rw auto claim  
+#rob no existe  
+#menu sistema activo  
     </div>
 
 </div>
