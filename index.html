@@ -135,6 +135,33 @@ nav button{
     font-size:13px;
 }
 
+/* REENVIADO */
+.forward{
+    margin-top:15px;
+    font-size:12px;
+    opacity:0.4;
+    padding:10px;
+    border-left:2px solid #00f7ff;
+    background:#0c1424;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.forward:hover{
+    opacity:1;
+}
+
+.forward a{
+    color:#00f7ff;
+    text-decoration:none;
+}
+
+.tag{
+    font-size:10px;
+    color:#00f7ff;
+    margin-right:6px;
+}
+
 /* FIRMA */
 .signature{
     text-align:center;
@@ -148,41 +175,53 @@ nav button{
 <body>
 
 <!-- 🔴 POWER BUTTON -->
-<button id="powerBtn" onclick="togglePower()">⏻ POWER</button>
+<button id="powerBtn" onclick="togglePower()">⏻ ENCENDIDO</button>
 
 <!-- LOADER -->
 <div id="loader">
-    <h3>ERIS SYSTEM BOOTING...</h3>
+    <h3>SISTEMA ERIS INICIANDO...</h3>
     <div class="bar"><div class="progress"></div></div>
 </div>
 
 <!-- NAV -->
 <nav>
-    <button onclick="show('home')">HOME</button>
+    <button onclick="show('home')">INICIO</button>
     <button onclick="show('panel')">PANEL</button>
-    <button onclick="show('logs')">LOGS</button>
+    <button onclick="show('logs')">REGISTROS</button>
 </nav>
 
 <!-- HOME -->
 <div id="home" class="section active">
-    <h2>📡 SYSTEM ONLINE</h2>
+    <h2>📡 SISTEMA EN LÍNEA</h2>
 
     <div class="container">
 
         <div class="module">
-            <h3>SYSTEM STATUS</h3>
-            <p id="status">🟢 ONLINE</p>
+            <h3>ESTADO DEL SISTEMA</h3>
+            <p id="status">🟢 EN LÍNEA</p>
         </div>
 
         <div class="module">
-            <h3>IDENTITY</h3>
+            <h3>IDENTIDAD</h3>
             <p>ERIS-BOT MD</p>
-            <p>ADMIN MODE</p>
+            <p>MODO ADMIN</p>
         </div>
 
         <div class="module">
-            <h3>CONTACT</h3>
+            <h3>CONTACTO</h3>
             <a class="btn red" href="https://wa.me/5219616050619">CHAT</a>
+        </div>
+
+        <!-- 🔥 REENVIADO -->
+        <div class="module">
+            <h3>MENSAJE DEL SISTEMA</h3>
+
+            <div class="forward">
+                <span class="tag">↪ REENVIADO</span>
+                <a href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O" target="_blank">
+                    Canal del Bot
+                </a>
+            </div>
         </div>
 
     </div>
@@ -190,28 +229,28 @@ nav button{
 
 <!-- PANEL -->
 <div id="panel" class="section">
-    <h2>⚙ CONTROL PANEL</h2>
+    <h2>⚙ PANEL DE CONTROL</h2>
 
     <div class="container">
 
         <div class="module">
-            <h3>WHATSAPP CHANNEL</h3>
+            <h3>CANAL DE WHATSAPP</h3>
             <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">
-                OPEN
+                ABRIR
             </a>
         </div>
 
         <div class="module">
-            <h3>GROUP</h3>
+            <h3>GRUPO</h3>
             <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">
-                JOIN
+                UNIRSE
             </a>
         </div>
 
         <div class="module">
             <h3>YOUTUBE</h3>
             <a class="btn youtube" href="https://youtube.com/@theduvalinbs">
-                VISIT
+                VISITAR
             </a>
         </div>
 
@@ -220,13 +259,13 @@ nav button{
 
 <!-- LOGS -->
 <div id="logs" class="section">
-    <h2>📜 SYSTEM LOGS</h2>
+    <h2>📜 REGISTROS DEL SISTEMA</h2>
 
     <div class="logbox">
-        > Boot iniciado...<br>
-        > Sistema ERIS ONLINE<br>
+        > Inicio del sistema...<br>
+        > Sistema ERIS en línea<br>
         > Usuario: ADMIN<br>
-        > Estado: STABLE<br>
+        > Estado: ESTABLE<br>
     </div>
 </div>
 
@@ -237,30 +276,27 @@ nav button{
 <script>
 let power = true;
 
-/* loader */
 setTimeout(()=>{
     document.getElementById("loader").style.display="none";
 },2500);
 
-/* cambiar secciones */
 function show(id){
-    if(!power) return alert("🔴 SYSTEM OFF");
+    if(!power) return alert("🔴 SISTEMA APAGADO");
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
 
-/* power system */
 function togglePower(){
     power = !power;
 
     if(power){
         document.body.style.filter = "none";
-        document.getElementById("status").innerText = "🟢 ONLINE";
-        alert("🟢 SYSTEM ON");
+        document.getElementById("status").innerText = "🟢 EN LÍNEA";
+        alert("🟢 SISTEMA ENCENDIDO");
     }else{
         document.body.style.filter = "brightness(0.2)";
-        document.getElementById("status").innerText = "🔴 OFFLINE";
-        alert("🔴 SYSTEM OFF");
+        document.getElementById("status").innerText = "🔴 APAGADO";
+        alert("🔴 SISTEMA APAGADO");
     }
 }
 </script>
