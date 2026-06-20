@@ -18,6 +18,7 @@ body{
     background:#05070f;
     color:#d1e8ff;
     transition:0.3s;
+    padding-top:10px;
 }
 
 /* 🔴 POWER BUTTON */
@@ -73,6 +74,7 @@ nav{
     justify-content:center;
     gap:10px;
     padding:10px;
+    margin-top:60px;
     background:#0c1424;
     border-bottom:1px solid #00f7ff33;
 }
@@ -126,6 +128,32 @@ nav button{
 .red{background:#ff3b3b;color:#fff;}
 .youtube{background:#ff2e2e;color:#fff;}
 
+/* REENVIADO CHAT STYLE */
+.forward-msg{
+    margin-top:15px;
+}
+
+.forward-header{
+    font-size:11px;
+    color:#00f7ff;
+    opacity:0.6;
+    margin-left:5px;
+}
+
+.bubble{
+    background:#0c1424;
+    border:1px solid #00f7ff33;
+    padding:12px;
+    border-radius:12px;
+    max-width:300px;
+    font-size:13px;
+}
+
+.bubble a{
+    color:#00f7ff;
+    text-decoration:none;
+}
+
 /* LOGS */
 .logbox{
     background:#0c1424;
@@ -133,33 +161,6 @@ nav button{
     border-radius:10px;
     border:1px solid #00f7ff33;
     font-size:13px;
-}
-
-/* REENVIADO */
-.forward{
-    margin-top:15px;
-    font-size:12px;
-    opacity:0.4;
-    padding:10px;
-    border-left:2px solid #00f7ff;
-    background:#0c1424;
-    border-radius:6px;
-    transition:0.3s;
-}
-
-.forward:hover{
-    opacity:1;
-}
-
-.forward a{
-    color:#00f7ff;
-    text-decoration:none;
-}
-
-.tag{
-    font-size:10px;
-    color:#00f7ff;
-    margin-right:6px;
 }
 
 /* FIRMA */
@@ -212,14 +213,15 @@ nav button{
             <a class="btn red" href="https://wa.me/5219616050619">CHAT</a>
         </div>
 
-        <!-- 🔥 REENVIADO -->
-        <div class="module">
-            <h3>MENSAJE DEL SISTEMA</h3>
+        <!-- 📢 REENVIADO COMO MENSAJE REAL -->
+        <div class="forward-msg">
+            <div class="forward-header">↪ REENVIADO</div>
 
-            <div class="forward">
-                <span class="tag">↪ REENVIADO</span>
+            <div class="bubble">
+                📢 Canal oficial del bot:
+                <br><br>
                 <a href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O" target="_blank">
-                    Canal del Bot
+                    👉 Entrar al canal
                 </a>
             </div>
         </div>
