@@ -4,11 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERIS-MD // DOMAIN VERIFICATION</title>
-
-<meta property="og:title" content="ERIS-MD • OFFICIAL VERIFIED SYSTEM">
-<meta property="og:description" content="Domain verification in progress... ERIS-MD system secure node active.">
-<meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
+<title>ERIS SYSTEM BOOT</title>
 
 <style>
 body{
@@ -19,80 +15,29 @@ body{
     align-items:center;
     background:#05070f;
     font-family:Arial,sans-serif;
-    color:#d1e8ff;
-}
-
-/* SCAN BACKGROUND */
-.scanline{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:linear-gradient(
-        rgba(0,255,255,0.05),
-        transparent,
-        rgba(0,255,255,0.05)
-    );
-    animation:scan 3s linear infinite;
-    z-index:-1;
-}
-
-@keyframes scan{
-    0%{transform:translateY(-100%);}
-    100%{transform:translateY(100%);}
-}
-
-/* CARD */
-.card{
-    width:380px;
-    background:#0c1424;
-    border:1px solid rgba(0,255,255,0.2);
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 0 25px rgba(0,255,255,0.15);
-}
-
-h2{
     color:#00f7ff;
-    letter-spacing:2px;
-    font-size:16px;
 }
 
-/* STATUS */
-.status{
-    margin-top:10px;
-    font-size:13px;
+/* LOADER */
+.loader-box{
+    text-align:center;
+    width:320px;
 }
 
-.ok{
-    color:#00ff9d;
-    font-weight:bold;
-}
-
-.check{
-    color:#ffcc00;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    50%{opacity:0.3;}
-}
-
-/* BAR */
 .bar{
-    margin-top:15px;
     width:100%;
     height:8px;
     background:#111a2e;
     border-radius:10px;
     overflow:hidden;
+    margin-top:15px;
 }
 
 .progress{
-    width:0%;
     height:100%;
+    width:0%;
     background:#00f7ff;
-    animation:load 4s forwards;
+    animation:load 3s forwards;
 }
 
 @keyframes load{
@@ -100,53 +45,54 @@ h2{
     100%{width:100%;}
 }
 
-/* FOOTER */
-.tag{
-    margin-top:15px;
-    font-size:11px;
-    opacity:0.7;
-    text-shadow:0 0 10px #00f7ff;
-    animation:glow 2s infinite;
+.text{
+    font-size:13px;
+    opacity:0.8;
 }
 
-@keyframes glow{
-    0%,100%{opacity:0.5;}
-    50%{opacity:1;}
+/* OCULTO */
+#panel{
+    display:none;
+    text-align:center;
 }
 </style>
 </head>
 
 <body>
 
-<div class="scanline"></div>
-
-<div class="card">
-
-    <h2>ERIS-MD DOMAIN SYSTEM</h2>
-
-    <div class="status">
-        🔍 Verificando dominio... <span class="check">in progress</span>
-    </div>
-
-    <div class="status">
-        🛡 SSL: ACTIVE<br>
-        🌐 NODE: CONNECTED<br>
-        🔐 SECURITY: VERIFIED (SIMULATED)
-    </div>
+<!-- BOOT -->
+<div class="loader-box" id="loader">
+    <h3>ERIS SYSTEM BOOTING...</h3>
+    <div class="text">Inicializando módulos de seguridad</div>
 
     <div class="bar">
         <div class="progress"></div>
     </div>
+</div>
 
-    <div class="status ok" style="margin-top:10px;">
-        ✔ DOMAIN STATUS: ERIS-MD VERIFIED
-    </div>
+<!-- PANEL REAL -->
+<div id="panel">
 
-    <div class="tag">
-        🌟 powered by • I'm DuvalinBS ✦
-    </div>
+    <h2>🍭 ERIS-BOT MD // RANGO ADMIN</h2>
+
+    <p>🌟 powered by • I'm DuvalinBS</p>
+
+    <img src="https://files.catbox.moe/a9dq9c.jpg" width="200">
+
+    <br><br>
+
+    <a href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">📢 CANAL</a><br>
+    <a href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">💬 GRUPO</a><br>
+    <a href="https://wa.me/5219616050619">📞 CONTACTO</a>
 
 </div>
+
+<script>
+setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+    document.getElementById("panel").style.display="block";
+}, 3000);
+</script>
 
 </body>
 </html>
