@@ -17,6 +17,22 @@ body{
     font-family:Arial;
     background:#05070f;
     color:#d1e8ff;
+    transition:0.3s;
+}
+
+/* 🔴 POWER BUTTON */
+#powerBtn{
+    position:fixed;
+    top:10px;
+    right:10px;
+    z-index:99999;
+    padding:10px 14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    background:#ff3b3b;
+    color:white;
 }
 
 /* LOADER */
@@ -131,6 +147,9 @@ nav button{
 
 <body>
 
+<!-- 🔴 POWER BUTTON -->
+<button id="powerBtn" onclick="togglePower()">⏻ POWER</button>
+
 <!-- LOADER -->
 <div id="loader">
     <h3>ERIS SYSTEM BOOTING...</h3>
@@ -152,7 +171,7 @@ nav button{
 
         <div class="module">
             <h3>SYSTEM STATUS</h3>
-            <p>🟢 ONLINE</p>
+            <p id="status">🟢 ONLINE</p>
         </div>
 
         <div class="module">
@@ -205,11 +224,9 @@ nav button{
 
     <div class="logbox">
         > Boot iniciado...<br>
-        > Cargando módulos...<br>
         > Sistema ERIS ONLINE<br>
         > Usuario: ADMIN<br>
         > Estado: STABLE<br>
-        > Conexiones activas: 3<br>
     </div>
 </div>
 
@@ -218,13 +235,33 @@ nav button{
 </div>
 
 <script>
+let power = true;
+
+/* loader */
 setTimeout(()=>{
     document.getElementById("loader").style.display="none";
 },2500);
 
+/* cambiar secciones */
 function show(id){
+    if(!power) return alert("🔴 SYSTEM OFF");
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
+}
+
+/* power system */
+function togglePower(){
+    power = !power;
+
+    if(power){
+        document.body.style.filter = "none";
+        document.getElementById("status").innerText = "🟢 ONLINE";
+        alert("🟢 SYSTEM ON");
+    }else{
+        document.body.style.filter = "brightness(0.2)";
+        document.getElementById("status").innerText = "🔴 OFFLINE";
+        alert("🔴 SYSTEM OFF");
+    }
 }
 </script>
 
