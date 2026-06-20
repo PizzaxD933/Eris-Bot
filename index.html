@@ -4,13 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🍭 ERIS-BOT MD // RANGO ADMIN</title>
+<title>🍭 ERIS-BOT MD // PANEL ADMIN</title>
 
-<!-- 🔥 PREVIEW -->
 <meta property="og:title" content="🍭 ERIS-BOT MD // RANGO ADMIN">
 <meta property="og:description" content="🌟 ᴘᴏᴡᴇʀᴇᴅ ʙʏ • I'm DuvalinBS">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
-<meta property="og:type" content="website">
 
 <style>
 body{
@@ -20,53 +18,15 @@ body{
     color:#d1e8ff;
 }
 
-/* LOADER OVERLAY */
-#loader{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:#05070f;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:9999;
-}
-
-.loader-box{
-    width:300px;
-    text-align:center;
-}
-
-.bar{
-    width:100%;
-    height:8px;
-    background:#111a2e;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:15px;
-}
-
-.progress{
-    height:100%;
-    width:0%;
-    background:#00f7ff;
-    animation:load 2.5s linear forwards;
-}
-
-@keyframes load{
-    0%{width:0%;}
-    100%{width:100%;}
-}
-
-/* PANEL */
+/* LAYOUT */
 .container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:15px;
     padding:20px;
 }
 
+/* MODULE */
 .module{
     background:#0c1424;
     border:1px solid rgba(0,255,255,0.15);
@@ -74,33 +34,43 @@ body{
     padding:15px;
 }
 
+/* TITLES */
 h3{
     margin-top:0;
-    color:#00f7ff;
     font-size:14px;
+    color:#00f7ff;
 }
 
+/* TEXT */
 p{
     font-size:13px;
     opacity:0.85;
+    line-height:1.4;
 }
 
-/* BUTTONS */
+/* BUTTON MENU */
 .btn{
     display:block;
-    margin-top:10px;
+    margin-top:8px;
     padding:10px;
-    text-align:center;
     border-radius:6px;
+    text-align:center;
     text-decoration:none;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.blue{ background:#2d7dff; color:#fff; }
+.green{ background:#00f7ff; color:#000; }
+.red{ background:#ff3b3b; color:#fff; }
+
+/* PROXIMAMENTE */
+.wip{
+    color:#ffcc00;
     font-weight:bold;
 }
 
-.green{ background:#00f7ff; color:#000; }
-.blue{ background:#2d7dff; color:#fff; }
-.red{ background:#ff3b3b; color:#fff; }
-
-/* FIRMA */
+/* SIGNATURE */
 .signature{
     text-align:center;
     font-size:11px;
@@ -120,67 +90,97 @@ p{
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-    <div class="loader-box">
-        <h3>ERIS SYSTEM LOADING...</h3>
-        <p>Inicializando módulos...</p>
-
-        <div class="bar">
-            <div class="progress"></div>
-        </div>
-    </div>
-</div>
-
-<!-- PANEL REAL -->
 <div class="container">
 
-    <div class="module">
-        <h3>📡 SYSTEM STATUS</h3>
-        <p>🟢 ONLINE - STABLE CONNECTION</p>
-    </div>
-
-    <div class="module">
-        <h3>🔐 NODE IDENTITY</h3>
-        <p>ID: ERIS-BOT MD</p>
-        <p>USER: ADMIN</p>
-        <p>OWNER: DuvalinBS</p>
-        <p>DEV: Neykoor</p>
-    </div>
-
-    <div class="module">
-        <h3>📢 CANAL</h3>
-        <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O" target="_blank">OPEN</a>
-    </div>
-
-    <div class="module">
-        <h3>💬 GRUPO</h3>
-        <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im" target="_blank">JOIN</a>
-    </div>
-
-    <div class="module">
-        <h3>📞 CONTACTO</h3>
-        <a class="btn red" href="https://wa.me/5219616050619" target="_blank">CHAT</a>
-    </div>
-    
+<!-- REQUISITOS -->
 <div class="module">
-    <h3>▶ YOUTUBE CHANNEL</h3>
-    <a class="btn youtube" href="https://youtube.com/@theduvalinbs?si=xIsq7g-qZdUsboAQ" target="_blank">
-        VISIT CHANNEL
-    </a>
+<h3>📌 REQUISITO OBLIGATORIO</h3>
+<p>
+╭┈ࠢ͜┅ࠦ͜͜╾ ERIS SYSTEM ╾ࠦ͜͜┅ࠢ╮<br>
+👤 ADMIN: I’m DuvalinBS<br>
+📊 EDAD: 15-20<br>
+👥 ADMINS: 5-10<br>
+⏰ ACTIVO: 5-10h/día<br>
+👥 USUARIOS: 8 admins/users<br>
+🌐 URL: <span class="wip">PROXIMAMENTE 🚧</span><br>
+╰┈ࠢ͜┅ࠦ͜͜ ERIS SYSTEM ┅ࠢ╯
+</p>
+</div>
+
+<!-- REQUISITOS ADMIN -->
+<div class="module">
+<h3>🍂 REQUISITOS PARA SER ADMIN</h3>
+<p>
+✔ Saber comandos del bot<br>
+✔ Ser responsable y formal<br>
+✔ Actividad constante<br>
+✔ Agregar máximo 5-7 personas/semana<br>
+✔ Mantener respeto
+</p>
+</div>
+
+<!-- SISTEMA ADMIN -->
+<div class="module">
+<h3>🎖️ SISTEMA DE ADMIN</h3>
+<p class="wip">🚧 PRÓXIMAMENTE</p>
+</div>
+
+<!-- PERFILES -->
+<div class="module">
+<h3>👤 PERFILES DE ADMINS</h3>
+<p class="wip">🚧 PRÓXIMAMENTE</p>
+</div>
+
+<!-- RANGOS -->
+<div class="module">
+<h3>🌟 RANGOS / SUELDO</h3>
+<p>
+🥉 Usuario<br>
+🥈 Normal<br>
+🥇 Admin<br>
+🎖️ Owner
+</p>
+</div>
+
+<!-- DESVENTAJAS -->
+<div class="module">
+<h3>📉 DESVENTAJAS DE RANGO</h3>
+<p class="wip">🚧 PRÓXIMAMENTE</p>
+</div>
+
+<!-- FAQ MENU -->
+<div class="module">
+<h3>🤔 PREGUNTAS FRECUENTES</h3>
+
+<a class="btn blue">.menu / .perfil</a>
+<a class="btn blue">.rw / .harem</a>
+<a class="btn blue">#rw / #c</a>
+<a class="btn blue">.ticket / .serie</a>
+<a class="btn blue">#rob / .robar</a>
+<a class="btn blue">#depositar / #d all</a>
+<a class="btn blue">.retirar all</a>
+<a class="btn blue">.code / .qr</a>
+<a class="btn blue">#menu / #p</a>
+
+</div>
+
+<!-- NOTAS -->
+<div class="module">
+<h3>🧠 NOTAS DEL SISTEMA</h3>
+<p>
+✔ Sistema gratuito e ilimitado<br>
+✔ Sin banco ni robos reales<br>
+✔ Gacha con costo ¥3000<br>
+✔ Personajes aleatorios disponibles<br>
+✔ Sistema de tickets activo
+</p>
 </div>
 
 </div>
 
 <div class="signature">
-    🌟 powered by • I'm DuvalinBS ✦
+🌟 powered by • I'm DuvalinBS ✦
 </div>
-
-<script>
-setTimeout(() => {
-    document.getElementById("loader").style.display = "none";
-}, 2500);
-</script>
 
 </body>
 </html>
