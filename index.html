@@ -4,183 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERIS SECURITY SYSTEM // DASHBOARD</title>
+<title>ERIS-MD // DOMAIN VERIFICATION</title>
 
-<meta property="og:title" content="ERIS SECURITY SYSTEM // ACTIVE NODE">
-<meta property="og:description" content="Cybersecurity dashboard interface | Access controlled system">
+<meta property="og:title" content="ERIS-MD • OFFICIAL VERIFIED SYSTEM">
+<meta property="og:description" content="Domain verification in progress... ERIS-MD system secure node active.">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
-<meta property="og:type" content="website">
 
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     background:#05070f;
+    font-family:Arial,sans-serif;
     color:#d1e8ff;
 }
 
-/* HEADER */
-.header{
+/* SCAN BACKGROUND */
+.scanline{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        rgba(0,255,255,0.05),
+        transparent,
+        rgba(0,255,255,0.05)
+    );
+    animation:scan 3s linear infinite;
+    z-index:-1;
+}
+
+@keyframes scan{
+    0%{transform:translateY(-100%);}
+    100%{transform:translateY(100%);}
+}
+
+/* CARD */
+.card{
+    width:380px;
+    background:#0c1424;
+    border:1px solid rgba(0,255,255,0.2);
+    border-radius:12px;
     padding:20px;
     text-align:center;
-    background:linear-gradient(90deg,#0b1220,#0a1a2f);
-    border-bottom:1px solid rgba(0,255,255,0.2);
+    box-shadow:0 0 25px rgba(0,255,255,0.15);
 }
 
-.header h1{
-    margin:0;
-    font-size:18px;
+h2{
+    color:#00f7ff;
     letter-spacing:2px;
-    color:#00f7ff;
-}
-
-.header p{
-    font-size:12px;
-    opacity:0.7;
-}
-
-/* GRID DASHBOARD */
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-    padding:20px;
-}
-
-/* MODULES */
-.module{
-    background:#0c1424;
-    border:1px solid rgba(0,255,255,0.15);
-    border-radius:10px;
-    padding:15px;
-    box-shadow:0 0 15px rgba(0,255,255,0.05);
-}
-
-.module h3{
-    margin-top:0;
-    font-size:14px;
-    color:#00f7ff;
-    letter-spacing:1px;
-}
-
-.module p{
-    font-size:13px;
-    opacity:0.85;
+    font-size:16px;
 }
 
 /* STATUS */
-.status-online{
+.status{
+    margin-top:10px;
+    font-size:13px;
+}
+
+.ok{
     color:#00ff9d;
     font-weight:bold;
 }
 
-.status-warning{
+.check{
     color:#ffcc00;
-    font-weight:bold;
+    animation:blink 1s infinite;
 }
 
-/* BUTTONS */
-.btn{
-    display:block;
-    margin-top:10px;
-    padding:10px;
-    text-align:center;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:13px;
-    transition:0.2s;
+@keyframes blink{
+    50%{opacity:0.3;}
 }
 
-.green{ background:#00f7ff; color:#000; }
-.green:hover{ background:#00c2cc; }
+/* BAR */
+.bar{
+    margin-top:15px;
+    width:100%;
+    height:8px;
+    background:#111a2e;
+    border-radius:10px;
+    overflow:hidden;
+}
 
-.red{ background:#ff3b3b; color:#fff; }
-.red:hover{ background:#c92c2c; }
+.progress{
+    width:0%;
+    height:100%;
+    background:#00f7ff;
+    animation:load 4s forwards;
+}
 
-.blue{ background:#2d7dff; color:#fff; }
-.blue:hover{ background:#1f5fcc; }
+@keyframes load{
+    0%{width:0%;}
+    100%{width:100%;}
+}
 
 /* FOOTER */
-.footer{
-    text-align:center;
-    padding:15px;
+.tag{
+    margin-top:15px;
     font-size:11px;
-    opacity:0.6;
-}
-
-/* GLOW SIGNATURE */
-.signature{
-    margin-top:10px;
-    font-size:11px;
-    color:#00f7ff;
-    text-shadow:0 0 8px #00f7ff;
-    animation:glow 2s infinite ease-in-out;
+    opacity:0.7;
+    text-shadow:0 0 10px #00f7ff;
+    animation:glow 2s infinite;
 }
 
 @keyframes glow{
-    0%{opacity:0.5; text-shadow:0 0 5px #00f7ff;}
-    50%{opacity:1; text-shadow:0 0 20px #00f7ff;}
-    100%{opacity:0.5; text-shadow:0 0 5px #00f7ff;}
+    0%,100%{opacity:0.5;}
+    50%{opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <h1>ERIS SECURITY SYSTEM</h1>
-    <p>Cyber Interface Dashboard • Access Level: ADMIN</p>
-</div>
+<div class="scanline"></div>
 
-<div class="container">
+<div class="card">
 
-    <!-- STATUS -->
-    <div class="module">
-        <h3>📡 SYSTEM STATUS</h3>
-        <p class="status-online">🟢 ONLINE - ALL SYSTEMS OPERATIONAL</p>
-        <p>Uptime stable. No threats detected.</p>
+    <h2>ERIS-MD DOMAIN SYSTEM</h2>
+
+    <div class="status">
+        🔍 Verificando dominio... <span class="check">in progress</span>
     </div>
 
-    <!-- IDENTIDAD -->
-    <div class="module">
-        <h3>🔐 NODE IDENTITY</h3>
-        <p>ID: ERIS-BOT MD</p>
-        <p>USER: ADMIN (DUVALINBS)</p>
-        <p>SECURITY: LEVEL 3 ACCESS</p>
+    <div class="status">
+        🛡 SSL: ACTIVE<br>
+        🌐 NODE: CONNECTED<br>
+        🔐 SECURITY: VERIFIED (SIMULATED)
     </div>
 
-    <!-- CANAL -->
-    <div class="module">
-        <h3>📢 OFFICIAL CHANNEL</h3>
-        <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O" target="_blank">
-            OPEN CHANNEL
-        </a>
+    <div class="bar">
+        <div class="progress"></div>
     </div>
 
-    <!-- GRUPO -->
-    <div class="module">
-        <h3>💬 COMMUNITY GROUP</h3>
-        <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im" target="_blank">
-            JOIN GROUP
-        </a>
+    <div class="status ok" style="margin-top:10px;">
+        ✔ DOMAIN STATUS: ERIS-MD VERIFIED
     </div>
 
-    <!-- CONTACTO -->
-    <div class="module">
-        <h3>📞 DIRECT CONTACT</h3>
-        <a class="btn red" href="https://wa.me/5219616050619" target="_blank">
-            OPEN CHAT
-        </a>
-    </div>
-
-</div>
-
-<div class="footer">
-    SYSTEM INTERFACE v2.0
-    <div class="signature">
+    <div class="tag">
         🌟 powered by • I'm DuvalinBS ✦
     </div>
+
 </div>
 
 </body>
