@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>⚡ ERIS OS // GOD MODE</title>
+<title>🍭 ERIS-BOT MD // MODO ADMIN</title>
 
-<meta property="og:title" content="⚡ ERIS OS GOD MODE">
+<meta property="og:title" content="🍭 ERIS-BOT MD // MODO ADMIN">
 <meta property="og:description" content="🌟 powered by I'm DuvalinBS">
 <meta property="og:image" content="https://files.catbox.moe/a9dq9c.jpg">
 <meta property="og:type" content="website">
@@ -15,15 +15,15 @@
 body{
     margin:0;
     font-family:Arial;
-    background:radial-gradient(circle at top,#0b1220,#05070f);
+    background:#05070f;
     color:#d1e8ff;
-    overflow:hidden;
 }
 
 /* LOADER */
 #loader{
     position:fixed;
-    inset:0;
+    width:100%;
+    height:100%;
     background:#05070f;
     display:flex;
     flex-direction:column;
@@ -32,149 +32,89 @@ body{
     z-index:9999;
 }
 
-.glowText{
-    color:#00f7ff;
-    text-shadow:0 0 10px #00f7ff,0 0 20px #2d7dff;
-}
-
 .bar{
-    width:320px;
+    width:280px;
     height:8px;
     background:#111a2e;
-    border-radius:20px;
+    border-radius:10px;
     overflow:hidden;
-    margin-top:15px;
+    margin-top:10px;
 }
 
-.fill{
+.progress{
     width:0%;
     height:100%;
-    background:linear-gradient(90deg,#00f7ff,#2d7dff,#ff2e2e);
-    animation:load 2.5s forwards;
+    background:#00f7ff;
+    animation:load 2.5s linear forwards;
 }
 
 @keyframes load{
     to{width:100%;}
 }
 
-/* APP */
-.app{
+/* NAV */
+nav{
     display:flex;
-    height:100vh;
-}
-
-/* SIDEBAR */
-.sidebar{
-    width:240px;
-    background:rgba(10,16,30,0.85);
-    backdrop-filter:blur(12px);
-    border-right:1px solid #00f7ff22;
-    padding:15px;
-}
-
-.brand{
-    color:#00f7ff;
-    font-weight:bold;
-    margin-bottom:20px;
-    text-shadow:0 0 10px #00f7ff;
-}
-
-.navbtn{
-    display:block;
+    justify-content:center;
+    gap:10px;
     padding:10px;
-    margin-bottom:8px;
-    border-radius:10px;
+    background:#0c1424;
+    border-bottom:1px solid #00f7ff33;
+}
+
+nav button{
     background:#111a2e;
-    border:1px solid #00f7ff22;
     color:#00f7ff;
+    border:1px solid #00f7ff33;
+    padding:8px 12px;
+    border-radius:6px;
     cursor:pointer;
-    transition:0.2s;
 }
 
-.navbtn:hover{
-    transform:scale(1.05);
-    background:#16233f;
-}
-
-/* CONTENT */
-.content{
-    flex:1;
-    padding:20px;
-    overflow:auto;
-}
-
-/* SECTIONS */
+/* SECCIONES */
 .section{
     display:none;
+    padding:20px;
 }
-
-.active{
-    display:block;
-}
-
-/* TOP HUD */
-.hud{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-    padding:10px 15px;
-    border:1px solid #00f7ff22;
-    border-radius:12px;
-    background:rgba(12,20,36,0.6);
-    backdrop-filter:blur(10px);
-}
-
-.hud span{
-    color:#00f7ff;
-}
+.active{display:block;}
 
 /* GRID */
-.grid{
+.container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:15px;
 }
 
-/* CARD */
-.card{
-    background:rgba(12,20,36,0.75);
-    border:1px solid #00f7ff22;
-    border-radius:14px;
+.module{
+    background:#0c1424;
+    border:1px solid rgba(0,255,255,0.15);
+    border-radius:10px;
     padding:15px;
-    transition:0.2s;
-    box-shadow:0 0 20px rgba(0,247,255,0.05);
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 0 25px rgba(0,247,255,0.15);
-}
-
-.card h3{
-    margin:0 0 10px 0;
-    color:#00f7ff;
-}
-
-/* BUTTONS */
+/* BOTONES */
 .btn{
     display:block;
     margin-top:10px;
     padding:10px;
-    border-radius:10px;
     text-align:center;
-    font-weight:bold;
+    border-radius:6px;
     text-decoration:none;
-    transition:0.2s;
-}
-
-.btn:hover{
-    transform:scale(1.03);
+    font-weight:bold;
 }
 
 .green{background:#00f7ff;color:#000;}
 .blue{background:#2d7dff;color:#fff;}
 .red{background:#ff3b3b;color:#fff;}
+.youtube{background:#ff2e2e;color:#fff;}
+
+/* FIRMA */
+.signature{
+    text-align:center;
+    font-size:11px;
+    margin:15px;
+    color:#00f7ff;
+}
 </style>
 </head>
 
@@ -182,94 +122,86 @@ body{
 
 <!-- LOADER -->
 <div id="loader">
-    <h2 class="glowText">⚡ ERIS SYSTEM INITIALIZING</h2>
+    <h3>ERIS SYSTEM BOOTING...</h3>
     <div class="bar">
-        <div class="fill"></div>
+        <div class="progress"></div>
     </div>
 </div>
 
-<div class="app">
+<!-- NAV -->
+<nav>
+    <button onclick="show('home')">INICIO</button>
+    <button onclick="show('panel')">PANEL</button>
+    <button onclick="show('contact')">CONTACTO</button>
+</nav>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="brand">⚡ ERIS OS</div>
+<!-- HOME -->
+<div id="home" class="section active">
 
-        <div class="navbtn" onclick="show('home')">🏠 HOME</div>
-        <div class="navbtn" onclick="show('panel')">⚙ PANEL</div>
-        <div class="navbtn" onclick="show('contact')">📞 CONTACT</div>
-    </div>
+    <h2>📡 SISTEMA ERIS ONLINE</h2>
 
-    <!-- CONTENT -->
-    <div class="content">
+    <div class="container">
 
-        <!-- HOME -->
-        <div id="home" class="section active">
-
-            <div class="hud">
-                <div>STATUS: <span>ONLINE</span></div>
-                <div>MODE: <span>GOD MODE</span></div>
-            </div>
-
-            <div class="grid">
-
-                <div class="card">
-                    <h3>SYSTEM CORE</h3>
-                    <p>ERIS OS ACTIVE</p>
-                </div>
-
-                <div class="card">
-                    <h3>POWER</h3>
-                    <p>MAX STABILITY</p>
-                </div>
-
-            </div>
-
+        <div class="module">
+            <h3>ESTADO</h3>
+            <p>🟢 ONLINE</p>
         </div>
 
-        <!-- PANEL -->
-        <div id="panel" class="section">
-
-            <div class="hud">
-                <div>CONTROL PANEL</div>
-                <div>ACCESS: USER</div>
-            </div>
-
-            <div class="grid">
-
-                <div class="card">
-                    <h3>CANAL</h3>
-                    <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">OPEN</a>
-                </div>
-
-                <div class="card">
-                    <h3>GROUP</h3>
-                    <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">JOIN</a>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- CONTACT -->
-        <div id="contact" class="section">
-
-            <div class="hud">
-                <div>CONTACT SYSTEM</div>
-            </div>
-
-            <div class="grid">
-
-                <div class="card">
-                    <h3>ADMIN</h3>
-                    <a class="btn red" href="https://wa.me/5219616050619">CHAT</a>
-                </div>
-
-            </div>
-
+        <div class="module">
+            <h3>ID</h3>
+            <p>ERIS-BOT MD</p>
         </div>
 
     </div>
 
+</div>
+
+<!-- PANEL -->
+<div id="panel" class="section">
+
+    <h2>⚙ PANEL</h2>
+
+    <div class="container">
+
+        <div class="module">
+            <h3>CANAL</h3>
+            <a class="btn green" href="https://whatsapp.com/channel/0029Vb7NOUpF1YlXOQHW6d3O">
+                ABRIR
+            </a>
+        </div>
+
+        <div class="module">
+            <h3>GRUPO</h3>
+            <a class="btn blue" href="https://chat.whatsapp.com/EyfZfsZy2dr6fy855Gr2im">
+                UNIRSE
+            </a>
+        </div>
+
+        <div class="module">
+            <h3>YOUTUBE</h3>
+            <a class="btn youtube" href="https://youtube.com/@theduvalinbs?si=xIsq7g-qZdUsboAQ">
+                VISITAR
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CONTACTO -->
+<div id="contact" class="section">
+
+    <h2>📞 CONTACTO</h2>
+
+    <div class="module">
+        <p>WhatsApp Admin:</p>
+        <a class="btn red" href="https://wa.me/5219616050619">CHAT</a>
+    </div>
+
+</div>
+
+<div class="signature">
+    🌟 powered by • I'm DuvalinBS ✦
 </div>
 
 <script>
