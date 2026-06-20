@@ -4,204 +4,156 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ðŸªŸ ERIS OS // WINDOWS MODE</title>
+<title> ERIS CORE SYSTEM</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial;
-    background:radial-gradient(circle,#0b1220,#05070f);
-    overflow:hidden;
+    background:#05070f;
     color:#d1e8ff;
 }
 
-/* DESKTOP */
-.desktop{
-    width:100vw;
-    height:100vh;
-    position:relative;
-}
-
-/* TASKBAR */
-.taskbar{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    height:45px;
+/* HEADER */
+header{
+    padding:15px;
     background:#0c1424;
-    display:flex;
-    align-items:center;
-    padding:0 10px;
-    border-top:1px solid #00f7ff33;
+    border-bottom:1px solid #00f7ff33;
+    text-align:center;
 }
 
-.start-btn{
-    background:#00f7ff;
-    color:#000;
-    padding:6px 12px;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* WINDOW */
-.window{
-    position:absolute;
-    width:320px;
-    height:220px;
-    background:#0c1424;
-    border:1px solid #00f7ff33;
-    border-radius:10px;
-    box-shadow:0 0 20px rgba(0,247,255,0.1);
-    overflow:hidden;
-}
-
-/* HEADER WINDOW */
-.win-header{
-    background:#111a2e;
-    padding:6px;
-    display:flex;
-    justify-content:space-between;
-    cursor:grab;
-}
-
-.win-title{
-    font-size:12px;
+header h1{
+    margin:0;
     color:#00f7ff;
 }
 
-.win-buttons button{
-    background:none;
-    border:none;
-    color:#fff;
-    cursor:pointer;
+/* BACK BUTTON */
+.back{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    background:#00f7ff;
+    color:#000;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
 }
 
-/* CONTENT */
-.win-content{
-    padding:10px;
-    font-size:13px;
+/* GRID */
+.container{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:15px;
 }
 
-/* HIDDEN */
-.hidden{
-    display:none;
-}
-
-/* START MENU */
-.start-menu{
-    position:absolute;
-    bottom:50px;
-    left:10px;
-    width:180px;
+/* CARD */
+.card{
     background:#0c1424;
-    border:1px solid #00f7ff33;
-    border-radius:8px;
-    display:none;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #00f7ff22;
+    white-space:pre-wrap;
 }
 
-.start-menu div{
-    padding:10px;
-    cursor:pointer;
-    border-bottom:1px solid #111a2e;
-}
-
-.start-menu div:hover{
-    background:#111a2e;
+.card h3{
+    color:#00f7ff;
+    margin-top:0;
 }
 </style>
 </head>
 
 <body>
 
-<div class="desktop">
+<header>
+    <h1> ERIS CORE SYSTEM</h1>
 
-    <!-- VENTANA 1 -->
-    <div class="window" id="win1" style="top:40px;left:40px;">
-        <div class="win-header" onmousedown="drag(event, 'win1')">
-            <span class="win-title">ðŸ“¡ ERIS OS</span>
-            <div class="win-buttons">
-                <button onclick="minimize('win1')">_</button>
-                <button onclick="closeWin('win1')">X</button>
-            </div>
-        </div>
-        <div class="win-content">
-            Sistema ERIS activo ðŸŸ¢<br><br>
-            Bienvenido al OS
-        </div>
+    <!-- REGRESO -->
+    <a class="back" href="index.html"> VOLVER AL OS</a>
+</header>
+
+<div class="container">
+
+    <div class="card">
+<h3>
+ `REQUISITO OBLIGATORIO`
+</h3>
+
+ ADMIN :: I’m DuvalinBS  
+ AGE MAX :: 15-20  
+ ADMIN GROUP :: 5-10  
+ TIME ACTIVE :: 5-10h (day)  
+ USERS :: 8 admins/users  
+ URL :: <profile url admin>  
+
+   
     </div>
 
-    <!-- VENTANA 2 -->
-    <div class="window" id="win2" style="top:120px;left:120px;">
-        <div class="win-header" onmousedown="drag(event, 'win2')">
-            <span class="win-title">âš™ CORE SYSTEM</span>
-            <div class="win-buttons">
-                <button onclick="minimize('win2')">_</button>
-                <button onclick="closeWin('win2')">X</button>
-            </div>
-        </div>
-        <div class="win-content">
-            ðŸ“Œ Requisitos admin<br>
-            ðŸŒŸ Rangos<br>
-            âš  Reglas del sistema
-        </div>
+    <div class="card">
+<h3> › ¡ REQUISITOS PARA SER ADMIN!</h3>
+
+›  Saber los comandos y funciones del bot.  
+No te pedimos programar o algo así, con saberte los comandos principales del bot es suficiente.
+
+›  Tener conocimiento de administración.  
+Debes ser formal y responder dudas de los usuarios.
+
+›  Agregar como máximo 5-7 personas cada semana.  
+Tendrás 2-3 días de oportunidad. Si no cumples serás expulsado de administración (no del grupo).
     </div>
 
-    <!-- START MENU -->
-    <div class="start-menu" id="startMenu">
-        <div onclick="openWin('win1')">ðŸ“¡ OS</div>
-        <div onclick="openWin('win2')">âš™ CORE</div>
+    <div class="card">
+<h3> RANGOS / SUELDO DE ADMINS</h3>
+
+Esto te ayudará a obtener recompensas, confianza u oportunidades extras.
+
+
+
+• Novato  
+• Bueno   
+• Elite   
+
+const userData = {
+  rango: "Sin rangos actualmente",
+  update: "20/6/2026",
+  time: "48 horas"
+}
+
+const mensaje = `
+<${userData.rango}>: update ${userData.update}
+<Time> ${userData.time}
+`
     </div>
 
-    <!-- TASKBAR -->
-    <div class="taskbar">
-        <div class="start-btn" onclick="toggleStart()">START</div>
+    <div class="card">
+<h3> DESVENTAJAS DE TENER RANGO</h3>
+
+Al llegar a BUENO () aumentan tus estadísticas:
+
+• Agregar 12 personas en lugar de 5-7  
+• Tendrás 3-4 días en lugar de 2-3  
+• Recompensa ¥1000000 si cumples tu rol  
+
+  const texto = "Al llegar a BUENO ()..."  
+    </div>
+
+    <div class="card">
+<h3> PREGUNTAS FRECUENTES</h3>
+
+#rw › #c  
+ Personaje auto reclamado  
+
+#rob <user>  
+ No existe robo de dinero  
+
+#depositar  
+ No existe banco  
+
+#menu  
+ Sistema activo con #setprimary
     </div>
 
 </div>
-
-<script>
-
-let activeWin = null;
-
-/* START MENU */
-function toggleStart(){
-    let menu = document.getElementById("startMenu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-/* OPEN WINDOW */
-function openWin(id){
-    document.getElementById(id).classList.remove("hidden");
-}
-
-/* CLOSE WINDOW */
-function closeWin(id){
-    document.getElementById(id).classList.add("hidden");
-}
-
-/* MINIMIZE */
-function minimize(id){
-    document.getElementById(id).classList.toggle("hidden");
-}
-
-/* DRAG SYSTEM */
-function drag(e, id){
-    let win = document.getElementById(id);
-    let offsetX = e.clientX - win.offsetLeft;
-    let offsetY = e.clientY - win.offsetTop;
-
-    function move(ev){
-        win.style.left = (ev.clientX - offsetX) + "px";
-        win.style.top = (ev.clientY - offsetY) + "px";
-    }
-
-    document.onmousemove = move;
-    document.onmouseup = () => document.onmousemove = null;
-}
-
-</script>
 
 </body>
 </html>
